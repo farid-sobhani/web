@@ -163,6 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Farid\User\Providers\UserServiceProvider::class,
         Farid\Category\Providers\CategoryServiceProvider::class,
+        Farid\RolePermission\Providers\RolePermissionServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Package Service Providers...

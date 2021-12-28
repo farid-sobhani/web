@@ -14,14 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dx', function () {
-    return view('d');
+Route::get('/test', function () {
+//   Spatie\Permission\Models\Permission::create(['name'=>'manage role_permissions']);
+//   auth()->user()->givePermissionTo('manage role_permissions');
+   return \auth()->logout();
+});
+
+Route::get('/dashboard', function () {
+//   Spatie\Permission\Models\Permission::create(['name'=>'manage role_permissions']);
+//   auth()->user()->givePermissionTo('manage role_permissions');
+   return view('welcome');
+});
+Route::get('/h', function () {
+//   Spatie\Permission\Models\Permission::create(['name'=>'manage role_permissions']);
+//   auth()->user()->givePermissionTo('manage role_permissions');
+    if (\auth()->user()){
+        return "yes";
+    }
+   return "no";
 });
 
 
-//Route::get('/register', function () {
-//    return view('dashboard');
-//})->middleware(['auth'])->name('dashboard');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //require __DIR__.'/auth.php';
 //Auth::routes(['verify'=>true]);

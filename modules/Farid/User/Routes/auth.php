@@ -8,18 +8,17 @@ use Farid\User\Http\Controllers\Auth\NewPasswordController;
 use Farid\User\Http\Controllers\Auth\PasswordResetLinkController;
 use Farid\User\Http\Controllers\Auth\RegisteredUserController;
 use Farid\User\Http\Controllers\Auth\VerifyEmailController;
+
+use Farid\User\Http\Controllers\PassportAuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('guest')
-                ->name('register');
+Route::post('/register1', [PassportAuthController::class, 'register'])
+                ->name('register1');
 
-Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest');
 
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])
-                ->middleware('guest')
-                ->name('login');
+
+Route::post('/login1', [PassportAuthController::class, 'login'])
+                ->name('login1');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest');
