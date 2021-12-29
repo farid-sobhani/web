@@ -16,6 +16,7 @@ Route::group(["namespace"=>"Farid\RolePermission\Http\Controllers",
     $router->post('permissions/permission/delete',[RolePermissionsController::class,'deletePermission']);
     $router->post('permissions/permission/user/give',[RolePermissionsController::class,'givePermissionToUser']);
     $router->post('permissions/permission/user/delete',[RolePermissionsController::class,'deleteUserPermission']);
+    $router->post('permissions/role/assignpermission',[RolePermissionsController::class,'assignPermissionToRole']);
 //    $router->post('categories/delete','CategoryController@destroy');
 
 });
