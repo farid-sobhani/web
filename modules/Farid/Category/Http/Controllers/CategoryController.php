@@ -7,9 +7,6 @@ use Farid\Category\Http\Requests\CategoryRequest;
 use Farid\Category\Http\Requests\CategoryUpdateRequest;
 use Farid\Category\Repositories\CategoryRepo;
 use Illuminate\Http\Request;
-use Laravel\Passport\Passport;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 class CategoryController extends Controller
 {
@@ -22,14 +19,9 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $user=auth()->user();
-        $x = $user->assignRole('pp');
-// $role=Role::findById(1);
-// $permission=Permission::findById(1);
-//$x= $role->givePermissionTo($permission);
-//        $permission = Permission::create(['name' => 'edit articles']);
-//        $categories = $this->repo->all();
-        return response()->json(['categories' => $x], '200');
+
+        $categories = $this->repo->all();
+        return response()->json(['categories' => $categories], '200');
     }
 
     public function store(CategoryRequest $request)

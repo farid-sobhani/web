@@ -165,6 +165,10 @@ return [
         Farid\Category\Providers\CategoryServiceProvider::class,
         Farid\RolePermission\Providers\RolePermissionServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+        Farid\Course\Providers\CourseServiceProvider::class,
+        Farid\Media\Providers\MediaServiceProvider::class,
+
+
 
         /*
          * Package Service Providers...
@@ -233,6 +237,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
